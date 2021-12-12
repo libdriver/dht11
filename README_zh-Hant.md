@@ -95,7 +95,7 @@ dht11_basic_deinit();
 
 ### 版權
 
-版權(C) LibDriver 2015-2021 版權所有
+版權 (c) 2015 - 現在 LibDriver 版權所有
 
 MIT 許可證（MIT）
 
