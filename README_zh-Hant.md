@@ -1,10 +1,12 @@
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+
 <div align=center>
 <img src="/doc/image/logo.png"/>
 </div>
 
 ## LibDriver DHT11
 
-[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+[![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/dht11/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
 DHT11數字溫濕度傳感器是一款含有已校準數字信號輸出的溫濕度複合傳感器。它應用專用的數字模塊採集技術和溫濕度傳感技術，確保產品具有極高的可靠性與卓越的長期穩定性。傳感器包括一個電容式感濕元件和一個NTC測溫元件，並與一個高性能8位單片機相連接。該傳感器具有成本低、長期穩定、相對濕度和溫度測量、品質卓越、超快響應、抗干擾能力強、超長的信號傳輸距離、數字信號輸出、精確校準的優點。被應用於暖通空調、除濕器、農業、冷鏈倉儲、測試及檢測設備、消費品、汽車、自動控制、數據記錄器、氣象站、家電、濕度調節器、醫療、其他相關濕度檢測控制。
 

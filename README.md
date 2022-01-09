@@ -1,10 +1,12 @@
+[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+
 <div align=center>
 <img src="/doc/image/logo.png"/>
 </div>
 
 ## LibDriver DHT11
 
-[English](/README.md) | [ 简体中文](/README_zh-Hans.md) | [繁體中文](/README_zh-Hant.md)
+[![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/dht11/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
 DHT11 digital temperature and humidity sensor is a temperature and humidity composite sensor with calibrated digital signal output. It uses special digital module acquisition technology and temperature and humidity sensing technology to ensure that the product has high reliability and excellent long-term stability. The sensor consists of a capacitive humidity sensor and a NTC temperature sensor, and is connected with a high-performance 8-bit MCU. The sensor has the advantages of low cost, long-term stability, relative humidity and temperature measurement, excellent quality, ultra fast response, strong anti-interference ability, ultra long signal transmission distance, digital signal output and accurate calibration. It is used in HVAC, dehumidifier, agriculture, cold chain storage, test and detection equipment, consumer goods, automobile, automatic control, data recorder, weather station, household appliances, humidity regulator, medical treatment, and other related humidity detection and control.
 
