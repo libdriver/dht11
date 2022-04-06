@@ -118,7 +118,7 @@ uint8_t dht11(uint8_t argc, char **argv)
             if (strcmp("read", argv[2]) == 0)
             {
                 /* run read test */
-                if (dht11_read_test(atoi(argv[3])))
+                if (dht11_read_test(atoi(argv[3])) != 0)
                 {
                     return 1;
                 }
@@ -139,25 +139,25 @@ uint8_t dht11(uint8_t argc, char **argv)
              /* basic read */
             if (strcmp("read", argv[2]) == 0)
             {
-                volatile uint8_t res;
-                volatile uint32_t times;
-                volatile uint32_t i;
-                volatile float temperature;
-                volatile uint8_t humidity;
+                uint8_t res;
+                uint32_t times;
+                uint32_t i;
+                float temperature;
+                uint8_t humidity;
                 
                 res = dht11_basic_init();
-                if (res)
+                if (res != 0)
                 {
                     return 1;
                 }
                 times = atoi(argv[3]);
-                for (i=0; i<times; i++)
+                for (i = 0; i < times; i++)
                 {
                     dht11_interface_delay_ms(2000);
                     res = dht11_basic_read((float *)&temperature, (uint8_t *)&humidity);
-                    if (res)
+                    if (res != 0)
                     {
-                        dht11_basic_deinit();
+                        (void)dht11_basic_deinit();
                         
                         return 1;
                     }
@@ -165,7 +165,7 @@ uint8_t dht11(uint8_t argc, char **argv)
                     dht11_interface_debug_print("dht11: temperature is %0.2fC.\n", temperature);
                     dht11_interface_debug_print("dht11: humidity is %d%%.\n", humidity); 
                 }
-                dht11_basic_deinit();
+                (void)dht11_basic_deinit();
                 
                 return 0;
             }
@@ -194,7 +194,7 @@ uint8_t dht11(uint8_t argc, char **argv)
  */
 int main(void)
 {
-    volatile uint8_t res;
+    uint8_t res;
     
     /* stm32f407 clock init and hal init */
     clock_init();

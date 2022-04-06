@@ -57,14 +57,14 @@
  *            - 1 no response
  * @note      none
  */
-static uint8_t _dht11_reset(dht11_handle_t *handle)
+static uint8_t a_dht11_reset(dht11_handle_t *handle)
 {
-    volatile uint8_t retry = 0;
-    volatile uint8_t res;
-    volatile uint8_t value;
+    uint8_t retry = 0;
+    uint8_t res;
+    uint8_t value;
     
     res = handle->bus_write(0);                                      /* set low */
-    if (res)                                                         /* check result */
+    if (res != 0)                                                    /* check result */
     {
         handle->debug_print("dht11: bus write 0 failed.\n");         /* write failed */
         
@@ -73,7 +73,7 @@ static uint8_t _dht11_reset(dht11_handle_t *handle)
     handle->delay_ms(20);                                            /* wait 20ms */
     handle->disable_irq();                                           /* disable interrupt */
     res = handle->bus_write(1);                                      /* set high */
-    if (res)                                                         /* check result */
+    if (res != 0)                                                    /* check result */
     {
         handle->enable_irq();                                        /* enable interrupt */
         handle->debug_print("dht11: bus write 1 failed.\n");         /* write failed */
@@ -82,17 +82,17 @@ static uint8_t _dht11_reset(dht11_handle_t *handle)
     }
     handle->delay_us(30);                                            /* wait 20-40us */
     res = handle->bus_read((uint8_t *)&value);                       /* read 1 bit */
-    if (res)                                                         /* check reault */
+    if (res != 0)                                                    /* check reault */
     {
         handle->enable_irq();                                        /* enable interrupt */
         handle->debug_print("dht11: bus read failed.\n");            /* read failed */
         
         return 1;                                                    /* return error */
     }
-    while (value && (retry < 100))                                   /* wait 40-80us */
+    while ((value != 0) && (retry < 100))                            /* wait 40-80us */
     {
         res = handle->bus_read((uint8_t *)&value);                   /* read 1 bit */
-        if (res)                                                     /* check result */
+        if (res != 0)                                                /* check result */
         {
             handle->enable_irq();                                    /* enable interrupt */
             handle->debug_print("dht11: bus read failed.\n");        /* read failed */
@@ -114,7 +114,7 @@ static uint8_t _dht11_reset(dht11_handle_t *handle)
         retry = 0;                                                   /* reset retry times */
     }
     res = handle->bus_read((uint8_t *)&value);                       /* read 1 bit */
-    if (res)                                                         /* check result */
+    if (res != 0)                                                    /* check result */
     {
         handle->enable_irq();                                        /* enable interrupt */
         handle->debug_print("dht11: bus read failed.\n");            /* read failed */
@@ -124,7 +124,7 @@ static uint8_t _dht11_reset(dht11_handle_t *handle)
     while ((!value) && (retry < 100))                                /* wait for 40-80us */
     {
         res = handle->bus_read((uint8_t *)&value);                   /* read 1 bit */
-        if (res)                                                     /* check result */
+        if (res != 0)                                                /* check result */
         {
             handle->enable_irq();                                    /* enable interrupt */
             handle->debug_print("dht11: bus read failed.\n");        /* read failed */
@@ -155,22 +155,22 @@ static uint8_t _dht11_reset(dht11_handle_t *handle)
  *             - 1 read failed
  * @note       none
  */
-static uint8_t _dht11_read_bit(dht11_handle_t *handle, uint8_t *value)
+static uint8_t a_dht11_read_bit(dht11_handle_t *handle, uint8_t *value)
 {
-    volatile uint8_t retry = 0;
-    volatile uint8_t res;
+    uint8_t retry = 0;
+    uint8_t res;
     
     res = handle->bus_read((uint8_t *)value);                        /* read 1 bit */
-    if (res)                                                         /* check result */
+    if (res != 0)                                                    /* check result */
     {
         handle->debug_print("dht11: bus read failed.\n");            /* read failed */
         
         return 1;                                                    /* return error */
     }
-    while ((*value) && (retry < 100))                                /* wait 100us */
+    while (((*value) != 0) && (retry < 100))                         /* wait 100us */
     {
         res = handle->bus_read((uint8_t *)value);                    /* read 1 bit */
-        if (res)                                                     /* check result */
+        if (res != 0)                                                /* check result */
         {
             handle->debug_print("dht11: bus read failed.\n");        /* read failed */
             
@@ -181,7 +181,7 @@ static uint8_t _dht11_read_bit(dht11_handle_t *handle, uint8_t *value)
     }
     retry = 0;                                                       /* reset retry times */
     res = handle->bus_read((uint8_t *)value);                        /* read 1 bit */
-    if (res)                                                         /* check result */
+    if (res != 0)                                                    /* check result */
     {
         handle->debug_print("dht11: bus read failed.\n");            /* read failed */
         
@@ -190,7 +190,7 @@ static uint8_t _dht11_read_bit(dht11_handle_t *handle, uint8_t *value)
     while ((!(*value)) && (retry < 100))                             /* wait 100us */
     {
         res = handle->bus_read((uint8_t *)value);                    /* read 1 bit */
-        if (res)                                                     /* check result */
+        if (res != 0)                                                /* check result */
         {
             handle->debug_print("dht11: bus read failed.\n");        /* read failed */
             
@@ -201,7 +201,7 @@ static uint8_t _dht11_read_bit(dht11_handle_t *handle, uint8_t *value)
     }
     handle->delay_us(40);                                            /* wait 40us */
     res = handle->bus_read((uint8_t *)value);                        /* read 1 bit */
-    if (res)                                                         /* check result */
+    if (res != 0)                                                    /* check result */
     {
         handle->debug_print("dht11: bus read failed.\n");            /* read failed */
         
@@ -222,18 +222,18 @@ static uint8_t _dht11_read_bit(dht11_handle_t *handle, uint8_t *value)
  *             - 1 read failed
  * @note       none
  */
-static uint8_t _dht11_read_byte(dht11_handle_t *handle, uint8_t *byte)
+static uint8_t a_dht11_read_byte(dht11_handle_t *handle, uint8_t *byte)
 {
-    volatile uint8_t i;
-    volatile uint8_t res;
-    volatile uint8_t value;
+    uint8_t i;
+    uint8_t res;
+    uint8_t value;
     
     *byte = 0;                                                       /* set byte 0 */
     for (i = 0; i < 8; i++)                                          /* read 8 bits */
     {
         *byte <<= 1;                                                 /* left shift 1 bit */
-        res = _dht11_read_bit(handle, (uint8_t *)&value);            /* read 1 bit */
-        if (res)                                                     /* check result */
+        res = a_dht11_read_bit(handle, (uint8_t *)&value);           /* read 1 bit */
+        if (res != 0)                                                /* check result */
         {
             handle->debug_print("dht11: bus read failed.\n");        /* read failed */
             
@@ -259,8 +259,8 @@ static uint8_t _dht11_read_byte(dht11_handle_t *handle, uint8_t *byte)
  */
 uint8_t dht11_read_humidity(dht11_handle_t *handle, uint16_t *raw, uint8_t *s)
 {
-    volatile uint8_t buf[5];
-    volatile uint8_t i;
+    uint8_t buf[5];
+    uint8_t i;
     
     if (handle == NULL)                                                   /* check handle */
     {
@@ -271,12 +271,12 @@ uint8_t dht11_read_humidity(dht11_handle_t *handle, uint16_t *raw, uint8_t *s)
         return 3;                                                         /* return error */
     }
     
-    if (_dht11_reset(handle) == 0)                                        /* reset the chip */
+    if (a_dht11_reset(handle) == 0)                                       /* reset the chip */
     {
         handle->disable_irq();                                            /* disable interrupt */
         for (i = 0; i < 5; i++)                                           /* read 5 bytes */
         {
-            if (_dht11_read_byte(handle, (uint8_t *)&buf[i]))             /* read each byte */
+            if (a_dht11_read_byte(handle, (uint8_t *)&buf[i]) != 0)       /* read each byte */
             {
                 handle->enable_irq();                                     /* enable interrupt */
                 handle->debug_print("dht11: read byte failed.\n");        /* read failed */
@@ -324,8 +324,8 @@ uint8_t dht11_read_humidity(dht11_handle_t *handle, uint16_t *raw, uint8_t *s)
 uint8_t dht11_read_temperature_humidity(dht11_handle_t *handle, uint16_t *temperature_raw, float *temperature_s,
                                         uint16_t *humidity_raw, uint8_t *humidity_s)
 {
-    volatile uint8_t buf[5];
-    volatile uint8_t i;
+    uint8_t buf[5];
+    uint8_t i;
     
     if (handle == NULL)                                                         /* check handle */
     {
@@ -336,12 +336,12 @@ uint8_t dht11_read_temperature_humidity(dht11_handle_t *handle, uint16_t *temper
         return 3;                                                               /* return error */
     }
     
-    if (_dht11_reset(handle) == 0)                                              /* reset the chip */
+    if (a_dht11_reset(handle) == 0)                                             /* reset the chip */
     {
         handle->disable_irq();                                                  /* disable interrupt */
         for (i = 0; i < 5; i++)                                                 /* read 5 bytes */
         {
-            if (_dht11_read_byte(handle, (uint8_t *)&buf[i]))                   /* read each byte */
+            if (a_dht11_read_byte(handle, (uint8_t *)&buf[i]) != 0)             /* read each byte */
             {
                 handle->enable_irq();                                           /* enable interrupt */
                 handle->debug_print("dht11: read byte failed.\n");              /* read failed */
@@ -355,12 +355,13 @@ uint8_t dht11_read_temperature_humidity(dht11_handle_t *handle, uint16_t *temper
             if (buf[3] > 127)                                                   /* if temperature is below zero */
             {
                 *temperature_raw = (uint16_t)buf[2] << 8 | buf[3];              /* get temperature raw data */
-                *temperature_s= (-(buf[2]*10 + buf[3]&~(1<<7))) / 10.0f;        /* convert temperature raw data to temperature real data */
+                *temperature_s= (float)(-(buf[2] * 10 + 
+                                 buf[3] & ~(1<<7))) / 10.0f;                    /* convert temperature raw data to temperature real data */
             }
             else
             {
                 *temperature_raw = (uint16_t)buf[2] << 8 | buf[3];              /* get temperature raw data */
-                *temperature_s= (buf[2]*10 + buf[3]) / 10.0f;                   /* convert temperature raw data to temperature real data */
+                *temperature_s= (float)(buf[2]*10 + buf[3]) / 10.0f;            /* convert temperature raw data to temperature real data */
             }
             *humidity_raw = (uint16_t)buf[0] << 8 | buf[1];                     /* get humidity raw */
             *humidity_s = buf[0];                                               /* convert humidity raw data to real data */
@@ -396,8 +397,8 @@ uint8_t dht11_read_temperature_humidity(dht11_handle_t *handle, uint16_t *temper
  */
 uint8_t dht11_read_temperature(dht11_handle_t *handle, uint16_t *raw, float *s)
 {
-    volatile uint8_t buf[5];
-    volatile uint8_t i;
+    uint8_t buf[5];
+    uint8_t i;
     
     if (handle == NULL)                                                   /* check handle */
     {
@@ -408,12 +409,12 @@ uint8_t dht11_read_temperature(dht11_handle_t *handle, uint16_t *raw, float *s)
         return 3;                                                         /* return error */
     }
     
-    if (_dht11_reset(handle) == 0)                                        /* reset the chip */
+    if (a_dht11_reset(handle) == 0)                                       /* reset the chip */
     {
         handle->disable_irq();                                            /* disable interrupt */
         for (i = 0; i < 5; i++)                                           /* read 5 bytes */
         {
-            if (_dht11_read_byte(handle, (uint8_t *)&buf[i]))             /* read each byte */
+            if (a_dht11_read_byte(handle, (uint8_t *)&buf[i]) != 0)       /* read each byte */
             {
                 handle->enable_irq();                                     /* enable interrupt */
                 handle->debug_print("dht11: read byte failed.\n");        /* read failed */
@@ -427,12 +428,12 @@ uint8_t dht11_read_temperature(dht11_handle_t *handle, uint16_t *raw, float *s)
             if (buf[3] > 127)                                             /* if temperature is below zero */
             {
                 *raw = (uint16_t)buf[2] << 8 | buf[3];                    /* get temperature raw data */
-                *s= (-(buf[2]*10 + buf[3]&~(1<<7))) / 10.0f;              /* convert temperature raw data to temperature real data */
+                *s= (float)(-(buf[2] * 10 + buf[3] & ~(1<<7))) / 10.0f;   /* convert temperature raw data to temperature real data */
             }
             else
             {
                 *raw = (uint16_t)buf[2] << 8 | buf[3];                    /* get temperature raw data */
-                *s= (buf[2] * 10 + buf[3]) / 10.0f;                       /* convert temperature raw data to temperature real data */
+                *s= (float)(buf[2] * 10 + buf[3]) / 10.0f;                /* convert temperature raw data to temperature real data */
             }
             
             return 0;                                                     /* success return 0 */
@@ -522,16 +523,16 @@ uint8_t dht11_init(dht11_handle_t *handle)
         return 3;                                                    /* return error */
     }
     
-    if (handle->bus_init())                                          /* initialize bus */
+    if (handle->bus_init() != 0)                                     /* initialize bus */
     {
         handle->debug_print("dht11: bus init failed.\n");            /* bus init failed */
         
         return 1;                                                    /* return error */
     }
-    if (_dht11_reset(handle))                                        /* reset the chip */
+    if (a_dht11_reset(handle) != 0)                                  /* reset the chip */
     {
         handle->debug_print("dht11: reset failed.\n");               /* reset failed */
-        handle->bus_deinit();                                        /* close bus */
+        (void)handle->bus_deinit();                                  /* close bus */
         
         return 4;                                                    /* return error */
     }
@@ -561,7 +562,7 @@ uint8_t dht11_deinit(dht11_handle_t *handle)
         return 3;                                              /* return error */
     }
     
-    if (handle->bus_deinit())                                  /* close bus */
+    if (handle->bus_deinit() != 0)                             /* close bus */
     {
         handle->debug_print("dht11: deinit failed.\n");        /* deinit failed */
         
