@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_DHT11_H_
-#define _DRIVER_DHT11_H_
+#ifndef DRIVER_DHT11_H
+#define DRIVER_DHT11_H
 
 #include <stdio.h>
 #include <stdint.h>
@@ -62,16 +62,16 @@ extern "C"{
  */
 typedef struct dht11_handle_s
 {
-    uint8_t (*bus_init)(void);                      /**< point to a bus_init function address */
-    uint8_t (*bus_read)(uint8_t *value);            /**< point to a bus_read function address */
-    uint8_t (*bus_write)(uint8_t value);            /**< point to a bus_write function address */
-    uint8_t (*bus_deinit)(void);                    /**< point to a bus_deinit function address */
-    void (*delay_ms)(uint32_t ms);                  /**< point to a delay_ms function address */
-    void (*delay_us)(uint32_t us);                  /**< point to a delay_us function address */
-    void (*enable_irq)(void);                       /**< point to a enable_irq function address */
-    void (*disable_irq)(void);                      /**< point to a disable_irq function address */
-    uint16_t (*debug_print)(char *fmt, ...);        /**< point to a debug_print function address */
-    uint8_t inited;                                 /**< inited flag */
+    uint8_t (*bus_init)(void);                              /**< point to a bus_init function address */
+    uint8_t (*bus_read)(uint8_t *value);                    /**< point to a bus_read function address */
+    uint8_t (*bus_write)(uint8_t value);                    /**< point to a bus_write function address */
+    uint8_t (*bus_deinit)(void);                            /**< point to a bus_deinit function address */
+    void (*delay_ms)(uint32_t ms);                          /**< point to a delay_ms function address */
+    void (*delay_us)(uint32_t us);                          /**< point to a delay_us function address */
+    void (*enable_irq)(void);                               /**< point to a enable_irq function address */
+    void (*disable_irq)(void);                              /**< point to a disable_irq function address */
+    void (*debug_print)(const char *const fmt, ...);        /**< point to a debug_print function address */
+    uint8_t inited;                                         /**< inited flag */
 } dht11_handle_t;
 
 /**

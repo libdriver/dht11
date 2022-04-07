@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_DHT11_BASIC_H_
-#define _DRIVER_DHT11_BASIC_H_
+#ifndef DRIVER_DHT11_BASIC_H
+#define DRIVER_DHT11_BASIC_H
 
 #include "driver_dht11_interface.h"
 

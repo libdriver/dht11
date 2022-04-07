@@ -48,7 +48,7 @@ static dht11_handle_t gs_handle;        /**< dht11 handle */
  */
 uint8_t dht11_basic_init(void)
 {
-    volatile uint8_t res;
+    uint8_t res;
     
     /* link interface function */
     DRIVER_DHT11_LINK_INIT(&gs_handle, dht11_handle_t);
@@ -64,7 +64,7 @@ uint8_t dht11_basic_init(void)
     
     /* dht11 init */
     res = dht11_init(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         dht11_interface_debug_print("dht11: init failed.\n");
         
@@ -85,12 +85,12 @@ uint8_t dht11_basic_init(void)
  */
 uint8_t dht11_basic_read(float *temperature, uint8_t *humidity)
 {
-    volatile uint16_t temperature_raw;
-    volatile uint16_t humidity_raw;
+    uint16_t temperature_raw;
+    uint16_t humidity_raw;
     
     /* read temperature and humidity */
     if (dht11_read_temperature_humidity(&gs_handle, (uint16_t *)&temperature_raw, temperature, 
-                                        (uint16_t *)&humidity_raw, humidity))
+                                       (uint16_t *)&humidity_raw, humidity) != 0)
     {
         return 1;
     }
@@ -110,7 +110,7 @@ uint8_t dht11_basic_read(float *temperature, uint8_t *humidity)
 uint8_t dht11_basic_deinit(void)
 {
     /* deinit dht11 and close bus */
-    if (dht11_deinit(&gs_handle))
+    if (dht11_deinit(&gs_handle) != 0)
     {
         return 1;
     }

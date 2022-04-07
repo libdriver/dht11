@@ -132,27 +132,19 @@ void dht11_interface_disable_irq(void)
 /**
  * @brief     interface print format data
  * @param[in] fmt is the format data
- * @return    length of the send data
  * @note      none
  */
-uint16_t dht11_interface_debug_print(char *fmt, ...)
+void dht11_interface_debug_print(const char *const fmt, ...)
 {
-    volatile char str[256];
-    volatile uint8_t len;
+    char str[256];
+    uint8_t len;
     va_list args;
     
-    memset((char *)str, 0, sizeof(char)*256); 
+    memset((char *)str, 0, sizeof(char) * 256); 
     va_start(args, fmt);
     vsnprintf((char *)str, 256, (char const *)fmt, args);
     va_end(args);
         
     len = strlen((char *)str);
-    if (uart1_write((uint8_t *)str, len))
-    {
-        return 0;
-    }
-    else
-    { 
-        return len;
-    }
+    uart1_write((uint8_t *)str, len);
 }

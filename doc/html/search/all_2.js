@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debug_5fprint_6',['debug_print',['../structdht11__handle__s.html#a75f9f50c23e87e9407f9ec4e34bb42f2',1,'dht11_handle_s']]],
+  ['debug_5fprint_6',['debug_print',['../structdht11__handle__s.html#a769d5b3a6c14790a0e126e8fe70b384b',1,'dht11_handle_s']]],
   ['delay_5fms_7',['delay_ms',['../structdht11__handle__s.html#a406c9433252b7366de417b7a60915c81',1,'dht11_handle_s']]],
   ['delay_5fus_8',['delay_us',['../structdht11__handle__s.html#a97ffc4fce945527bd6ab25a3596caef7',1,'dht11_handle_s']]],
   ['dht11_20base_20driver_20function_9',['dht11 base driver function',['../group__dht11__base__driver.html',1,'']]],
@@ -19,7 +19,7 @@ var searchData=
   ['dht11_5finfo_5fs_22',['dht11_info_s',['../structdht11__info__s.html',1,'']]],
   ['dht11_5finfo_5ft_23',['dht11_info_t',['../group__dht11__base__driver.html#ga3d9b3de8501469de5f8b12447a561aed',1,'driver_dht11.h']]],
   ['dht11_5finit_24',['dht11_init',['../group__dht11__base__driver.html#gaba23e7aa523fc9ba8459efc36aa04582',1,'dht11_init(dht11_handle_t *handle):&#160;driver_dht11.c'],['../group__dht11__base__driver.html#gaba23e7aa523fc9ba8459efc36aa04582',1,'dht11_init(dht11_handle_t *handle):&#160;driver_dht11.c']]],
-  ['dht11_5finterface_5fdebug_5fprint_25',['dht11_interface_debug_print',['../group__dht11__interface__driver.html#gab1a92f526820416784a34f368624d872',1,'dht11_interface_debug_print(char *fmt,...):&#160;driver_dht11_interface_template.c'],['../group__dht11__interface__driver.html#gab1a92f526820416784a34f368624d872',1,'dht11_interface_debug_print(char *fmt,...):&#160;driver_dht11_interface_template.c']]],
+  ['dht11_5finterface_5fdebug_5fprint_25',['dht11_interface_debug_print',['../group__dht11__interface__driver.html#gac818cc70f2a4e72ac2358edc7f3f93e8',1,'dht11_interface_debug_print(const char *const fmt,...):&#160;driver_dht11_interface_template.c'],['../group__dht11__interface__driver.html#gac818cc70f2a4e72ac2358edc7f3f93e8',1,'dht11_interface_debug_print(const char *const fmt,...):&#160;driver_dht11_interface_template.c']]],
   ['dht11_5finterface_5fdeinit_26',['dht11_interface_deinit',['../group__dht11__interface__driver.html#ga375690337d2b66ee6e4339cc20e1983f',1,'dht11_interface_deinit(void):&#160;driver_dht11_interface_template.c'],['../group__dht11__interface__driver.html#ga375690337d2b66ee6e4339cc20e1983f',1,'dht11_interface_deinit(void):&#160;driver_dht11_interface_template.c']]],
   ['dht11_5finterface_5fdelay_5fms_27',['dht11_interface_delay_ms',['../group__dht11__interface__driver.html#gaeb26aa4617659b1c9802c00c5103ca03',1,'dht11_interface_delay_ms(uint32_t ms):&#160;driver_dht11_interface_template.c'],['../group__dht11__interface__driver.html#gaeb26aa4617659b1c9802c00c5103ca03',1,'dht11_interface_delay_ms(uint32_t ms):&#160;driver_dht11_interface_template.c']]],
   ['dht11_5finterface_5fdelay_5fus_28',['dht11_interface_delay_us',['../group__dht11__interface__driver.html#ga7f24439de47eaef6b6abee90dfa0fa11',1,'dht11_interface_delay_us(uint32_t us):&#160;driver_dht11_interface_template.c'],['../group__dht11__interface__driver.html#ga7f24439de47eaef6b6abee90dfa0fa11',1,'dht11_interface_delay_us(uint32_t us):&#160;driver_dht11_interface_template.c']]],

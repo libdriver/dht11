@@ -35,8 +35,8 @@
  * </table>
  */
 
-#ifndef _DRIVER_DHT11_INTERFACE_H_
-#define _DRIVER_DHT11_INTERFACE_H_
+#ifndef DRIVER_DHT11_INTERFACE_H
+#define DRIVER_DHT11_INTERFACE_H
 
 #include "driver_dht11.h"
 
@@ -118,10 +118,9 @@ void dht11_interface_disable_irq(void);
 /**
  * @brief     interface print format data
  * @param[in] fmt is the format data
- * @return    length of the send data
  * @note      none
  */
-uint16_t dht11_interface_debug_print(char *fmt, ...);
+void dht11_interface_debug_print(const char *const fmt, ...);
 
 /**
  * @}

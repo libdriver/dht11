@@ -49,12 +49,12 @@ static dht11_handle_t gs_handle;        /**< dht11 handle */
  */
 uint8_t dht11_read_test(uint32_t times)
 {
-    volatile uint8_t res;
-    volatile uint32_t i;
-    volatile uint16_t temperature_raw;
-    volatile uint16_t humidity_raw;
-    volatile float temperature;
-    volatile uint8_t humidity;
+    uint8_t res;
+    uint32_t i;
+    uint16_t temperature_raw;
+    uint16_t humidity_raw;
+    float temperature;
+    uint8_t humidity;
     dht11_info_t info;
    
     /* link interface function */
@@ -71,7 +71,7 @@ uint8_t dht11_read_test(uint32_t times)
 
     /* get dht11 information */
     res = dht11_info(&info);
-    if (res)
+    if (res != 0)
     {
         dht11_interface_debug_print("dht11: get info failed.\n");
        
@@ -96,7 +96,7 @@ uint8_t dht11_read_test(uint32_t times)
     
     /* dht11 init */
     res = dht11_init(&gs_handle);
-    if (res)
+    if (res != 0)
     {
         dht11_interface_debug_print("dht11: init failed.\n");
        
@@ -105,14 +105,14 @@ uint8_t dht11_read_test(uint32_t times)
     
     /* delay 2000 ms for read */
     dht11_interface_delay_ms(2000);
-    for (i=0; i<times; i++)
+    for (i = 0; i < times; i++)
     {
         /* read temperature and humidity */
         res = dht11_read_temperature_humidity(&gs_handle, (uint16_t *)&temperature_raw, (float *)&temperature, (uint16_t *)&humidity_raw, (uint8_t *)&humidity);
-        if (res)
+        if (res != 0)
         {
             dht11_interface_debug_print("dth11: read failed.\n");
-            dht11_deinit(&gs_handle);
+            (void)dht11_deinit(&gs_handle);
            
             return 1;
         }
@@ -127,7 +127,7 @@ uint8_t dht11_read_test(uint32_t times)
 
     /* finish basic read test and exit */
     dht11_interface_debug_print("dht11: finish read test.\n");
-    dht11_deinit(&gs_handle);
+    (void)dht11_deinit(&gs_handle);
     
     return 0;
 }
