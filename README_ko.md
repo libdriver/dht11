@@ -6,7 +6,7 @@
 
 ## LibDriver DHT11
 
-[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/dht11/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
+[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/dht11/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
 DHT11 디지털 온습도 센서는 보정된 디지털 신호 출력이 있는 온습도 복합 센서입니다. 특수 디지털 모듈 획득 기술과 온도 및 습도 감지 기술을 사용하여 제품의 높은 신뢰성과 우수한 장기 안정성을 보장합니다. 센서는 정전용량식 습도센서와 NTC 온도센서로 구성되며 고성능 8비트 MCU와 연결된다. 이 센서는 저비용, 장기 안정성, 상대 습도 및 온도 측정, 우수한 품질, 초고속 응답, 강력한 간섭 방지 기능, 매우 긴 신호 전송 거리, 디지털 신호 출력 및 정확한 보정의 장점을 가지고 있습니다. HVAC, 제습기, 농업, 냉장 보관, 테스트 및 감지 장비, 소비재, 자동차, 자동 제어, 데이터 레코더, 기상 관측소, 가전 제품, 습도 조절기, 의료 및 기타 관련 습도 감지 및 제어에 사용됩니다.
 
