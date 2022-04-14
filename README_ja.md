@@ -6,7 +6,7 @@
 
 ## LibDriver DHT11
 
-[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue)](https://www.libdriver.com/docs/dht11/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
+[![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/dht11/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
 DHT11デジタル温度および湿度センサーは、校正されたデジタル信号出力を備えた温度および湿度複合センサーです。特殊なデジタルモジュール取得技術と温度および湿度検知技術を使用して、製品の高い信頼性と優れた長期安定性を保証します。センサーは、静電容量式湿度センサーとNTC温度センサーで構成され、高性能の8ビットMCUに接続されています。このセンサーには、低コスト、長期安定性、相対湿度および温度測定、優れた品質、超高速応答、強力な干渉防止能力、超長信号伝送距離、デジタル信号出力、および正確なキャリブレーションという利点があります。これは、HVAC、除湿機、農業、コールドチェーンストレージ、テストおよび検出機器、消費財、自動車、自動制御、データレコーダー、気象台、家電製品、湿度調整器、医療、およびその他の関連する湿度検出および制御で使用されます。
 
