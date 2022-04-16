@@ -56,7 +56,7 @@ float temperature;
 uint8_t humidity;
 
 res = dht11_basic_init();
-if (res)
+if (res != 0)
 {
     return 1;
 }
@@ -67,9 +67,9 @@ for (i = 0; i < 3; i++)
 {
     dht11_interface_delay_ms(2000);
     res = dht11_basic_read((float *)&temperature, (uint8_t *)&humidity);
-    if (res)
+    if (res != 0)
     {
-        dht11_basic_deinit();
+        (void)dht11_basic_deinit();
 
         return 1;
     }
@@ -82,7 +82,7 @@ for (i = 0; i < 3; i++)
 
 ...
 
-dht11_basic_deinit();
+(void)dht11_basic_deinit();
 ```
 
 ### 文檔
