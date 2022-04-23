@@ -83,6 +83,8 @@ for (i = 0; i < 3; i++)
 ...
 
 (void)dht11_basic_deinit();
+
+return 0;
 ```
 
 ### ドキュメント
