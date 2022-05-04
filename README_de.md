@@ -26,15 +26,15 @@ Libdriver DHT11 ist der voll funktionsfähige Treiber von DHT11, der von LibDriv
 
 /src enthält LibDriver DHT11-Quelldateien.
 
-/interface enthält die plattformunabhängige Vorlage LibDriver DHT11 onewire。
+/interface enthält die plattformunabhängige Vorlage LibDriver DHT11 onewire.
 
-/test enthält den Testcode des LibDriver DHT11-Treibers und dieser Code kann die erforderliche Funktion des Chips einfach testen。
+/test enthält den Testcode des LibDriver DHT11-Treibers und dieser Code kann die erforderliche Funktion des Chips einfach testen.
 
 /example enthält LibDriver DHT11-Beispielcode.
 
 /doc enthält das LibDriver DHT11-Offlinedokument.
 
-/Datenblatt enthält DHT11-Datenblatt。
+/Datenblatt enthält DHT11-Datenblatt.
 
 /project enthält den allgemeinen Beispielcode für Linux- und MCU-Entwicklungsboards. Alle Projekte verwenden das Shell-Skript, um den Treiber zu debuggen, und die detaillierten Anweisungen finden Sie in der README.md jedes Projekts.
 
