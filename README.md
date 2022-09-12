@@ -27,15 +27,15 @@ Libdriver DHT11 is the full function driver of DHT11 launched by LibDriver.It pr
 
 /src includes LibDriver DHT11 source files.
 
-/interface includes LibDriver DHT11 onewire platform independent template。
+/interface includes LibDriver DHT11 onewire platform independent template.
 
-/test includes LibDriver DHT11 driver test code and this code can test the chip necessary function simply。
+/test includes LibDriver DHT11 driver test code and this code can test the chip necessary function simply.
 
 /example includes LibDriver DHT11 sample code.
 
 /doc includes LibDriver DHT11 offline document.
 
-/datasheet includes DHT11 datasheet。
+/datasheet includes DHT11 datasheet.
 
 /project includes the common Linux and MCU development board sample code. All projects use the shell script to debug the driver and the detail instruction can be found in each project's README.md.
 
@@ -50,6 +50,8 @@ Add /src, /interface and /example to your project.
 #### example basic
 
 ```C
+#include "driver_dht11_basic.h"
+
 uint8_t res;
 uint8_t i;
 float temperature;
