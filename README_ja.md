@@ -50,6 +50,8 @@ Libdriver DHT11は、LibDriverによって起動されたDHT11の全機能ドラ
 #### example basic
 
 ```C
+#include "driver_dht11_basic.h"
+
 uint8_t res;
 uint8_t i;
 float temperature;

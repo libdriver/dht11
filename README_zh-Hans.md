@@ -50,6 +50,8 @@ LibDriver DHT11是LibDriver推出的DHT11全功能驱动，该驱动提供温度
 #### example basic
 
 ```C
+#include "driver_dht11_basic.h"
+
 uint8_t res;
 uint8_t i;
 float temperature;
