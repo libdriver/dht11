@@ -75,12 +75,12 @@ dht11: max current is 1.00mA.
 dht11: max temperature is 60.0C.
 dht11: min temperature is -20.0C.
 dht11: start read test.
-dth11: temperature: 27.4C.
-dth11: humidity: 9%.
-dth11: temperature: 27.4C.
-dth11: humidity: 9%.
-dth11: temperature: 27.4C.
-dth11: humidity: 9%.
+dht11: temperature: 27.4C.
+dht11: humidity: 9%.
+dht11: temperature: 27.4C.
+dht11: humidity: 9%.
+dht11: temperature: 27.4C.
+dht11: humidity: 9%.
 dht11: finish read test.
 ```
 

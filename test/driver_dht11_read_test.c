@@ -111,15 +111,15 @@ uint8_t dht11_read_test(uint32_t times)
         res = dht11_read_temperature_humidity(&gs_handle, (uint16_t *)&temperature_raw, (float *)&temperature, (uint16_t *)&humidity_raw, (uint8_t *)&humidity);
         if (res != 0)
         {
-            dht11_interface_debug_print("dth11: read failed.\n");
+            dht11_interface_debug_print("dht11: read failed.\n");
             (void)dht11_deinit(&gs_handle);
            
             return 1;
         }
     
         /* print result */
-        dht11_interface_debug_print("dth11: temperature: %.01fC.\n", temperature);
-        dht11_interface_debug_print("dth11: humidity: %d%%.\n", humidity);
+        dht11_interface_debug_print("dht11: temperature: %.01fC.\n", temperature);
+        dht11_interface_debug_print("dht11: humidity: %d%%.\n", humidity);
 
         /* delay 2000 ms*/
         dht11_interface_delay_ms(2000);
