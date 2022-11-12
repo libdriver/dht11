@@ -9,7 +9,7 @@
 
 Der digitale Temperatur- und Feuchtigkeitssensor DHT11 ist ein zusammengesetzter Temperatur- und Feuchtigkeitssensor mit kalibriertem Digitalsignalausgang. Es verwendet eine spezielle digitale Modulerfassungstechnologie sowie Temperatur- und Feuchtigkeitsmesstechnologie, um sicherzustellen, dass das Produkt eine hohe Zuverlässigkeit und ausgezeichnete Langzeitstabilität aufweist. Der Sensor besteht aus einem kapazitiven Feuchtigkeitssensor und einem NTC-Temperatursensor und ist mit einer leistungsstarken 8-Bit-MCU verbunden. Der Sensor hat die Vorteile von niedrigen Kosten, Langzeitstabilität, relativer Feuchtigkeits- und Temperaturmessung, ausgezeichneter Qualität, ultraschneller Reaktion, starker Entstörungsfähigkeit, ultralanger Signalübertragungsdistanz, digitaler Signalausgabe und genauer Kalibrierung. Es wird in HVAC, Luftentfeuchtern, Landwirtschaft, Kühlkettenlagerung, Test- und Erkennungsgeräten, Konsumgütern, Automobilen, automatischen Steuerungen, Datenrekordern, Wetterstationen, Haushaltsgeräten, Feuchtigkeitsreglern, medizinischen Behandlungen und anderen verwandten Feuchtigkeitserkennungen und -kontrollen verwendet.
 
-Libdriver DHT11 ist der voll funktionsfähige Treiber von DHT11, der von LibDriver gestartet wurde. Er bietet die Funktion zum Lesen von Temperatur und relativer Luftfeuchtigkeit. LibDriver ist MISRA-konform.
+LibDriver DHT11 ist der voll funktionsfähige Treiber von DHT11, der von LibDriver gestartet wurde. Er bietet die Funktion zum Lesen von Temperatur und relativer Luftfeuchtigkeit. LibDriver ist MISRA-konform.
 
 ### Inhaltsverzeichnis
 
