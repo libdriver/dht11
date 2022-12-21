@@ -68,7 +68,7 @@ typedef struct dht11_handle_s
     uint8_t (*bus_deinit)(void);                            /**< point to a bus_deinit function address */
     void (*delay_ms)(uint32_t ms);                          /**< point to a delay_ms function address */
     void (*delay_us)(uint32_t us);                          /**< point to a delay_us function address */
-    void (*enable_irq)(void);                               /**< point to a enable_irq function address */
+    void (*enable_irq)(void);                               /**< point to an enable_irq function address */
     void (*disable_irq)(void);                              /**< point to a disable_irq function address */
     void (*debug_print)(const char *const fmt, ...);        /**< point to a debug_print function address */
     uint8_t inited;                                         /**< inited flag */
@@ -160,7 +160,7 @@ typedef struct dht11_info_s
 /**
  * @brief     link enable_irq function
  * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a enable_irq function address
+ * @param[in] FUC points to an enable_irq function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_ENABLE_IRQ(HANDLE, FUC)  (HANDLE)->enable_irq = FUC

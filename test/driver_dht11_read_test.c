@@ -83,7 +83,7 @@ uint8_t dht11_read_test(uint32_t times)
         dht11_interface_debug_print("dht11: chip is %s.\n", info.chip_name);
         dht11_interface_debug_print("dht11: manufacturer is %s.\n", info.manufacturer_name);
         dht11_interface_debug_print("dht11: interface is %s.\n", info.interface);
-        dht11_interface_debug_print("dht11: driver version is %d.%d.\n", info.driver_version/1000, (info.driver_version%1000)/100);
+        dht11_interface_debug_print("dht11: driver version is %d.%d.\n", info.driver_version / 1000, (info.driver_version % 1000) / 100);
         dht11_interface_debug_print("dht11: min supply voltage is %0.1fV.\n", info.supply_voltage_min_v);
         dht11_interface_debug_print("dht11: max supply voltage is %0.1fV.\n", info.supply_voltage_max_v);
         dht11_interface_debug_print("dht11: max current is %0.2fmA.\n", info.max_current_ma);

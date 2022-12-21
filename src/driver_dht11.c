@@ -40,8 +40,8 @@
 /**
  * @brief chip information definition
  */
-#define CHIP_NAME                "AoSong DHT11"        /**< chip name */
-#define MANUFACTURER_NAME        "Aosong"              /**< manufacturer name */
+#define CHIP_NAME                "ASAIR DHT11"         /**< chip name */
+#define MANUFACTURER_NAME        "ASAIR"               /**< manufacturer name */
 #define SUPPLY_VOLTAGE_MIN       3.3f                  /**< chip min supply voltage */
 #define SUPPLY_VOLTAGE_MAX       5.5f                  /**< chip max supply voltage */
 #define MAX_CURRENT              1.0f                  /**< chip max current */
