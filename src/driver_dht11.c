@@ -82,7 +82,7 @@ static uint8_t a_dht11_reset(dht11_handle_t *handle)
     }
     handle->delay_us(30);                                            /* wait 20-40us */
     res = handle->bus_read((uint8_t *)&value);                       /* read 1 bit */
-    if (res != 0)                                                    /* check reault */
+    if (res != 0)                                                    /* check result */
     {
         handle->enable_irq();                                        /* enable interrupt */
         handle->debug_print("dht11: bus read failed.\n");            /* read failed */
@@ -597,7 +597,7 @@ uint8_t dht11_info(dht11_info_t *info)
     info->max_current_ma = MAX_CURRENT;                             /* set maximum current */
     info->temperature_max = TEMPERATURE_MAX;                        /* set minimal temperature */
     info->temperature_min = TEMPERATURE_MIN;                        /* set maximum temperature */
-    info->driver_version = DRIVER_VERSION;                          /* set driver verison */
+    info->driver_version = DRIVER_VERSION;                          /* set driver version */
     
     return 0;                                                       /* success return 0 */
 }
