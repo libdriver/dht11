@@ -64,7 +64,7 @@ uint8_t dht11(uint8_t argc, char **argv)
         {"times", required_argument, NULL, 1},
         {NULL, 0, NULL, 0},
     };
-    char type[33] = "unknow";
+    char type[33] = "unknown";
     uint32_t times = 3;
     
     /* if no params */
@@ -290,7 +290,7 @@ int main(uint8_t argc, char **argv)
     }
     else
     {
-        dht11_interface_debug_print("dht11: unknow status code.\n");
+        dht11_interface_debug_print("dht11: unknown status code.\n");
     }
 
     return 0;
