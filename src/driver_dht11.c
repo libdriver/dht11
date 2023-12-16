@@ -356,7 +356,7 @@ uint8_t dht11_read_temperature_humidity(dht11_handle_t *handle, uint16_t *temper
             {
                 *temperature_raw = (uint16_t)buf[2] << 8 | buf[3];              /* get temperature raw data */
                 *temperature_s= (float)(-(buf[2] * 10 + 
-                                 buf[3] & ~(1<<7))) / 10.0f;                    /* convert temperature raw data to temperature real data */
+                                 (buf[3] & ~(1<<7)))) / 10.0f;                  /* convert temperature raw data to temperature real data */
             }
             else
             {
@@ -428,7 +428,7 @@ uint8_t dht11_read_temperature(dht11_handle_t *handle, uint16_t *raw, float *s)
             if (buf[3] > 127)                                             /* if temperature is below zero */
             {
                 *raw = (uint16_t)buf[2] << 8 | buf[3];                    /* get temperature raw data */
-                *s= (float)(-(buf[2] * 10 + buf[3] & ~(1<<7))) / 10.0f;   /* convert temperature raw data to temperature real data */
+                *s= (float)(-(buf[2] * 10 + (buf[3] & ~(1<<7)))) / 10.0f; /* convert temperature raw data to temperature real data */
             }
             else
             {

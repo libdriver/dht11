@@ -354,7 +354,7 @@ $(document).ready(function(){initNavTree('driver__dht11_8c_source.html',''); ini
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            {</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                *temperature_raw = (uint16_t)buf[2] &lt;&lt; 8 | buf[3];              <span class="comment">/* get temperature raw data */</span></div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                *temperature_s= (float)(-(buf[2] * 10 + </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                 buf[3] &amp; ~(1&lt;&lt;7))) / 10.0f;                    <span class="comment">/* convert temperature raw data to temperature real data */</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                                 (buf[3] &amp; ~(1&lt;&lt;7)))) / 10.0f;                  <span class="comment">/* convert temperature raw data to temperature real data */</span></div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            }</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            {</div>
@@ -414,7 +414,7 @@ $(document).ready(function(){initNavTree('driver__dht11_8c_source.html',''); ini
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            <span class="keywordflow">if</span> (buf[3] &gt; 127)                                             <span class="comment">/* if temperature is below zero */</span></div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            {</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                *raw = (uint16_t)buf[2] &lt;&lt; 8 | buf[3];                    <span class="comment">/* get temperature raw data */</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                *s= (float)(-(buf[2] * 10 + buf[3] &amp; ~(1&lt;&lt;7))) / 10.0f;   <span class="comment">/* convert temperature raw data to temperature real data */</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                *s= (float)(-(buf[2] * 10 + (buf[3] &amp; ~(1&lt;&lt;7)))) / 10.0f; <span class="comment">/* convert temperature raw data to temperature real data */</span></div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            }</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            {</div>
