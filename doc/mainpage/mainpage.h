@@ -1,6 +1,6 @@
 /**
  * @mainpage  LibDriver DHT11
- * @brief     libdriver dht11 is a full function driver of dht11 and it can run in both MCU and Linux platform.
+ * @brief     LibDriver DHT11 is a full function driver of DHT11 and it can run in both MCU and Linux platform.
  * @version   2.0.0
  * @author    Shifeng Li
  *
