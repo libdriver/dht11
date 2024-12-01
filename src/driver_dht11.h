@@ -103,80 +103,80 @@ typedef struct dht11_info_s
 
 /**
  * @brief     initialize dht11_handle_t structure
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] STRUCTURE is dht11_handle_t
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] STRUCTURE dht11_handle_t
  * @note      none
  */
 #define DRIVER_DHT11_LINK_INIT(HANDLE, STRUCTURE)   memset(HANDLE, 0, sizeof(STRUCTURE))
 
 /**
  * @brief     link bus_init function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a bus_init function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a bus_init function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_BUS_INIT(HANDLE, FUC)    (HANDLE)->bus_init = FUC
 
 /**
  * @brief     link bus_deinit function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a bus_deinit function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a bus_deinit function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_BUS_DEINIT(HANDLE, FUC)  (HANDLE)->bus_deinit = FUC
 
 /**
  * @brief     link bus_read function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a bus_read function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a bus_read function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_BUS_READ(HANDLE, FUC)    (HANDLE)->bus_read = FUC
 
 /**
  * @brief     link bus_write function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a bus_write function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a bus_write function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_BUS_WRITE(HANDLE, FUC)   (HANDLE)->bus_write = FUC
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a delay_ms function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a delay_ms function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_DELAY_MS(HANDLE, FUC)    (HANDLE)->delay_ms = FUC
 
 /**
  * @brief     link delay_us function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a delay_us function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a delay_us function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_DELAY_US(HANDLE, FUC)    (HANDLE)->delay_us = FUC
 
 /**
  * @brief     link enable_irq function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to an enable_irq function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to an enable_irq function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_ENABLE_IRQ(HANDLE, FUC)  (HANDLE)->enable_irq = FUC
 
 /**
  * @brief     link disable_irq function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a disable_irq function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a disable_irq function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_DISABLE_IRQ(HANDLE, FUC) (HANDLE)->disable_irq = FUC
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to a dht11 handle structure
- * @param[in] FUC points to a debug_print function address
+ * @param[in] HANDLE pointer to a dht11 handle structure
+ * @param[in] FUC pointer to a debug_print function address
  * @note      none
  */
 #define DRIVER_DHT11_LINK_DEBUG_PRINT(HANDLE, FUC) (HANDLE)->debug_print = FUC
@@ -194,7 +194,7 @@ typedef struct dht11_info_s
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to a dht11 info structure
+ * @param[out] *info pointer to a dht11 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -204,7 +204,7 @@ uint8_t dht11_info(dht11_info_t *info);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to a dht11 handle structure
+ * @param[in] *handle pointer to a dht11 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 bus initialization failed
@@ -217,7 +217,7 @@ uint8_t dht11_init(dht11_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to a dht11 handle structure
+ * @param[in] *handle pointer to a dht11 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 bus deinit failed
@@ -229,11 +229,11 @@ uint8_t dht11_deinit(dht11_handle_t *handle);
 
 /**
  * @brief      read the temperature and humidity data
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *temperature_raw points to a raw temperature buffer
- * @param[out] *temperature_s points to a converted temperature buffer
- * @param[out] *humidity_raw points to a raw humidity buffer
- * @param[out] *humidity_s points to a converted humidity buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *temperature_raw pointer to a raw temperature buffer
+ * @param[out] *temperature_s pointer to a converted temperature buffer
+ * @param[out] *humidity_raw pointer to a raw humidity buffer
+ * @param[out] *humidity_s pointer to a converted humidity buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature humidity failed
@@ -246,9 +246,9 @@ uint8_t dht11_read_temperature_humidity(dht11_handle_t *handle, uint16_t *temper
 
 /**
  * @brief      read the humidity data
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *raw points to a raw humidity buffer
- * @param[out] *s points to a converted humidity buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *raw pointer to a raw humidity buffer
+ * @param[out] *s pointer to a converted humidity buffer
  * @return     status code
  *             - 0 success
  *             - 1 read humidity failed
@@ -260,9 +260,9 @@ uint8_t dht11_read_humidity(dht11_handle_t *handle, uint16_t *raw, uint8_t *s);
 
 /**
  * @brief      read the temperature data
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *raw points to a raw temperature buffer
- * @param[out] *s points to a converted temperature buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *raw pointer to a raw temperature buffer
+ * @param[out] *s pointer to a converted temperature buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature failed

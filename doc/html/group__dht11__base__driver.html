@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <p>close the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a dht11 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a dht11 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,7 +226,7 @@ Functions</h2></td></tr>
 <p>get chip's information </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>points to a dht11 info structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>pointer to a dht11 info structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -260,7 +260,7 @@ Functions</h2></td></tr>
 <p>initialize the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a dht11 handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a dht11 handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -313,9 +313,9 @@ Functions</h2></td></tr>
 <p>read the humidity data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a dht11 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>points to a raw humidity buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*s</td><td>points to a converted humidity buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a dht11 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>pointer to a raw humidity buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*s</td><td>pointer to a converted humidity buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -367,9 +367,9 @@ Functions</h2></td></tr>
 <p>read the temperature data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a dht11 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>points to a raw temperature buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*s</td><td>points to a converted temperature buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a dht11 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>pointer to a raw temperature buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*s</td><td>pointer to a converted temperature buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -433,11 +433,11 @@ Functions</h2></td></tr>
 <p>read the temperature and humidity data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a dht11 handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_raw</td><td>points to a raw temperature buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_s</td><td>points to a converted temperature buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*humidity_raw</td><td>points to a raw humidity buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*humidity_s</td><td>points to a converted humidity buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a dht11 handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_raw</td><td>pointer to a raw temperature buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*temperature_s</td><td>pointer to a converted temperature buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*humidity_raw</td><td>pointer to a raw humidity buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*humidity_s</td><td>pointer to a converted humidity buffer </td></tr>
   </table>
   </dd>
 </dl>
