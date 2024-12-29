@@ -71,8 +71,8 @@ uint8_t dht11_basic_deinit(void);
 
 /**
  * @brief      basic example read
- * @param[out] *temperature points to a converted temperature buffer
- * @param[out] *humidity points to a converted humidity buffer
+ * @param[out] *temperature pointer to a converted temperature buffer
+ * @param[out] *humidity pointer to a converted humidity buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed

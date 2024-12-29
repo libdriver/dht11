@@ -51,7 +51,7 @@
 
 /**
  * @brief     reset the chip
- * @param[in] *handle points to a dht11 handle structure
+ * @param[in] *handle pointer to a dht11 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 no response
@@ -148,8 +148,8 @@ static uint8_t a_dht11_reset(dht11_handle_t *handle)
 
 /**
  * @brief      read one bit
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *value points to a value buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *value pointer to a value buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -215,8 +215,8 @@ static uint8_t a_dht11_read_bit(dht11_handle_t *handle, uint8_t *value)
 
 /**
  * @brief      read one byte
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *byte points to a byte buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *byte pointer to a byte buffer
  * @return     status code
  *             - 0 success
  *             - 1 read failed
@@ -247,9 +247,9 @@ static uint8_t a_dht11_read_byte(dht11_handle_t *handle, uint8_t *byte)
 
 /**
  * @brief      read the humidity data
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *raw points to a raw humidity buffer
- * @param[out] *s points to a converted humidity buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *raw pointer to a raw humidity buffer
+ * @param[out] *s pointer to a converted humidity buffer
  * @return     status code
  *             - 0 success
  *             - 1 read humidity failed
@@ -309,11 +309,11 @@ uint8_t dht11_read_humidity(dht11_handle_t *handle, uint16_t *raw, uint8_t *s)
 
 /**
  * @brief      read the temperature and humidity data
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *temperature_raw points to a raw temperature buffer
- * @param[out] *temperature_s points to a converted temperature buffer
- * @param[out] *humidity_raw points to a raw humidity buffer
- * @param[out] *humidity_s points to a converted humidity buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *temperature_raw pointer to a raw temperature buffer
+ * @param[out] *temperature_s pointer to a converted temperature buffer
+ * @param[out] *humidity_raw pointer to a raw humidity buffer
+ * @param[out] *humidity_s pointer to a converted humidity buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature humidity failed
@@ -385,9 +385,9 @@ uint8_t dht11_read_temperature_humidity(dht11_handle_t *handle, uint16_t *temper
 
 /**
  * @brief      read the temperature data
- * @param[in]  *handle points to a dht11 handle structure
- * @param[out] *raw points to a raw temperature buffer
- * @param[out] *s points to a converted temperature buffer
+ * @param[in]  *handle pointer to a dht11 handle structure
+ * @param[out] *raw pointer to a raw temperature buffer
+ * @param[out] *s pointer to a converted temperature buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature failed
@@ -455,7 +455,7 @@ uint8_t dht11_read_temperature(dht11_handle_t *handle, uint16_t *raw, float *s)
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to a dht11 handle structure
+ * @param[in] *handle pointer to a dht11 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 bus initialization failed
@@ -543,7 +543,7 @@ uint8_t dht11_init(dht11_handle_t *handle)
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to a dht11 handle structure
+ * @param[in] *handle pointer to a dht11 handle structure
  * @return    status code
  *            - 0 success
  *            - 1 bus deinit failed
@@ -575,7 +575,7 @@ uint8_t dht11_deinit(dht11_handle_t *handle)
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to a dht11 info structure
+ * @param[out] *info pointer to a dht11 info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
